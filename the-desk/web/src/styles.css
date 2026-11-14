@@ -1,4 +1,4 @@
-/* The Desk: one tower, seven analysts. Blue-hour skyline, architectural type, one cool accent. */
+/* Highrise: one tower, seven analysts. Blue-hour skyline, architectural type, one cool accent. */
 :root {
   --night: #18233a;
   --slate: #141c2a;
@@ -44,7 +44,7 @@ button, select, textarea { font: inherit; color: inherit; }
 .stockpick option { background: var(--slate); }
 .hud-notes { position: fixed; left: 22px; bottom: 18px; display: flex; gap: 8px; flex-wrap: wrap; }
 .plate { font-family: var(--mono); font-size: 12px; color: var(--text-2); background: rgba(20, 28, 42, 0.8); border: 1px solid var(--line); border-radius: 4px; padding: 4px 9px; }
-.toast { position: fixed; left: 50%; bottom: 22px; transform: translateX(-50%); background: var(--text); color: var(--slate); padding: 9px 16px; border-radius: 6px; font-weight: 600; z-index: 99; }
+.toast { position: fixed; left: 50%; bottom: 22px; transform: translateX(-50%); background: var(--text); color: var(--slate); padding: 9px 16px; border-radius: 6px; font-weight: 600; z-index: 200; }
 
 /* ---------- labels in the 3D scene ---------- */
 .ftag-wrap { transform: translate(-100%, -50%); display: flex; flex-direction: row; gap: 4px; align-items: center; }
@@ -264,3 +264,25 @@ button, select, textarea { font: inherit; color: inherit; }
 .card-progress i.done { background: var(--c); }
 .panel { animation: panel-in 0.4s cubic-bezier(.2, .8, .2, 1); }
 @keyframes panel-in { from { transform: translateX(40px); opacity: 0; } }
+
+/* ---------- landing screen ---------- */
+.landing { position: fixed; inset: 0; z-index: 100; background: var(--night); display: flex; align-items: center; justify-content: center; transition: opacity 0.55s ease, transform 0.55s ease; }
+.landing.landing-exit { opacity: 0; transform: translateY(-36px); pointer-events: none; }
+.landing-inner { width: min(540px, 90vw); display: flex; flex-direction: column; gap: 28px; }
+.landing-brand { display: flex; align-items: center; gap: 16px; }
+.landing-title { margin: 0; font-size: 68px; font-weight: 700; letter-spacing: -0.02em; line-height: 1; color: var(--text); }
+.landing-tagline { margin: 0; font-size: 17px; color: var(--text-2); line-height: 1.5; max-width: 44ch; }
+.landing-steps { display: flex; flex-direction: column; gap: 12px; border-left: 2px solid var(--line); padding-left: 18px; }
+.landing-step { display: flex; align-items: baseline; gap: 12px; font-size: 15px; color: var(--text-2); line-height: 1.45; }
+.landing-step-n { font-family: var(--mono); font-size: 12px; color: var(--accent); flex-shrink: 0; min-width: 14px; }
+.landing-step b { color: var(--text); font-weight: 600; }
+.landing-foot { display: flex; flex-direction: column; gap: 14px; }
+.landing-bar-wrap { display: flex; align-items: center; gap: 10px; }
+.landing-bar { flex: 1; height: 3px; background: var(--slate-2); border-radius: 2px; overflow: hidden; }
+.landing-bar-fill { height: 100%; background: var(--accent); border-radius: 2px; transition: width 0.3s ease; }
+.landing-pct { font-family: var(--mono); font-size: 12px; color: var(--text-3); min-width: 32px; text-align: right; }
+.landing-start { font-size: 16px; padding: 12px 28px; }
+
+/* ---------- hud layer: fades in after the fly-in lands ---------- */
+.hud-layer { opacity: 0; transition: opacity 0.6s ease; pointer-events: none; }
+.hud-layer.hud-layer-in { opacity: 1; pointer-events: auto; }

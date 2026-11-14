@@ -276,7 +276,7 @@ function AimOnce({ controls }) {
   const done = useRef(false);
   useFrame(() => {
     if (done.current || !controls.current) return;
-    controls.current.setLookAt(150, 62, 210, 22, 58, 0, false);
+    controls.current.setLookAt(0, 350, 400, 0, 50, 0, false);
     done.current = true;
   });
   return null;
@@ -308,11 +308,11 @@ export function SkyAndLight({ shadowSize = 220 }) {
   );
 }
 
-export default function Exterior({ run, company, onEnter }) {
+export default function Exterior({ run, company, onEnter, controlsRef: extControlsRef }) {
   const controls = useRef();
   const city = useCity();
   return (
-    <Canvas shadows dpr={[1, 2]} camera={{ position: [150, 62, 210], fov: 36, near: 1, far: 5000 }} gl={{ antialias: true, toneMapping: THREE.ACESFilmicToneMapping, toneMappingExposure: 0.9 }}>
+    <Canvas shadows dpr={[1, 2]} camera={{ position: [0, 350, 400], fov: 36, near: 1, far: 5000 }} gl={{ antialias: true, toneMapping: THREE.ACESFilmicToneMapping, toneMappingExposure: 0.9 }}>
       <SkyAndLight />
       <Streets />
       {city.map((b, i) => <Building key={i} b={b} />)}
@@ -320,7 +320,10 @@ export default function Exterior({ run, company, onEnter }) {
       <Planes />
       <ResearchTower run={run} company={company} onEnter={onEnter} />
       <AimOnce controls={controls} />
-      <CameraControls ref={controls} makeDefault minDistance={60} maxDistance={420} minPolarAngle={0.3} maxPolarAngle={1.45} dollySpeed={0.5} />
+      <CameraControls
+        ref={(c) => { controls.current = c; if (extControlsRef) extControlsRef.current = c; }}
+        makeDefault minDistance={60} maxDistance={420} minPolarAngle={0.3} maxPolarAngle={1.45} dollySpeed={0.5}
+      />
     </Canvas>
   );
 }

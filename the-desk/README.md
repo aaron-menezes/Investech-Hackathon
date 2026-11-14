@@ -1,10 +1,10 @@
-# The Desk
+# Highrise
 
 > *Most people can't afford a team of analysts. Now you get a whole city of them.*
 
 **[Live demo →](https://investechhackthon-hwcj-i67u2ewf1-louis-c9b6.vercel.app/)**
 
-The Desk is an AI-powered equity research platform built as an animated 3D city. Pick any stock and a team of seven specialized AI agents researches it in parallel — you watch them work in real time, floor by floor, in a living tower. The result is a one-page investment pitch where every single number is sourced and fact-checked.
+Highrise is an AI-powered equity research platform built as an animated 3D city. Pick any stock and a team of seven specialized AI agents researches it in parallel — you watch them work in real time, floor by floor, in a living tower. The result is a one-page investment pitch where every single number is sourced and fact-checked.
 
 ---
 

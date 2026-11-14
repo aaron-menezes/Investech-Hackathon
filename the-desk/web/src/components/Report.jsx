@@ -25,7 +25,7 @@ export default function Report({ report: r, onClose }) {
         <article className="sheet" onClick={(e) => e.stopPropagation()}>
           <header className="sh-head">
             <div>
-              <div className="sh-kicker">The Desk research note{r.asOf ? `, data as of ${r.asOf.replace('-', ' ')}` : ''}</div>
+              <div className="sh-kicker">Highrise research note{r.asOf ? `, data as of ${r.asOf.replace('-', ' ')}` : ''}</div>
               <h1>{r.company.name}</h1><div className="sh-ticker">{r.ticker}{r.company.exchange ? `, ${r.company.exchange}` : ''}</div>
               {r.index && <div className="sh-index">Candidate for Onesheet's <b>{r.index.name}</b> index</div>}
               <div className="sh-headline">{r.headline}</div>
@@ -109,7 +109,7 @@ export default function Report({ report: r, onClose }) {
             <ol>{sources.map((f) => <li key={f.id} value={Number(f.id.slice(1))}><b>{f.label}</b>: {f.display} ({f.period}). {f.source?.type}: {f.source?.doc}{f.source?.note ? `. ${f.source.note}` : ''}</li>)}</ol>
           </section>
           <footer className="sh-foot">
-            Generated {new Date(r.generatedAt).toLocaleString()} by The Desk ({r.live ? 'live AI agents' : 'offline agents'}) on Onesheet data. Every number links to a source; the AI never writes numbers itself. Educational research, not investment advice.
+            Generated {new Date(r.generatedAt).toLocaleString()} by Highrise ({r.live ? 'live AI agents' : 'offline agents'}) on Onesheet data. Every number links to a source; the AI never writes numbers itself. Educational research, not investment advice.
           </footer>
         </article>
       </div>
