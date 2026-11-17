@@ -1,6 +1,6 @@
 # Highrise
 
-**Most people can't afford a team of analysts. Highrise gives you a whole skyline of them.**
+**Wall Street has research teams. Now you do too.**
 
 [Live demo →]()
 
