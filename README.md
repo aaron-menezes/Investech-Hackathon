@@ -2,7 +2,7 @@
 
 **Wall Street has research teams. Now you do too.**
 
-[Live demo →]()
+**[Live demo](https://investech-hackathon.vercel.app/)**
 
 Highrise is an AI-powered equity research platform built as an animated 3D city. Pick any stock and a team of seven specialized AI agents researches it in parallel — you watch them work in real time, floor by floor, in a living tower. The result is a one-page investment pitch where every single number is sourced and fact-checked.
 
